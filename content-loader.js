@@ -239,11 +239,9 @@
 
     // Footer
     const footer = content.footer || {};
-    if (footer.email) {
-      const link = document.getElementById('footerEmailLink');
-      link.href = 'mailto:' + footer.email;
-      link.textContent = footer.email;
-    }
+    const footerEmailLink = document.getElementById('footerEmailLink');
+    footerEmailLink.href = footer.email ? 'mailto:' + footer.email : '#';
+    footerEmailLink.textContent = footer.email || '';
     setText('footerCopyright', footer.copyright);
     const footerSocials = document.getElementById('footerSocials');
     footerSocials.innerHTML = '';
