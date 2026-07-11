@@ -1,0 +1,296 @@
+{
+  "meta": {
+    "title": "CraftoriX — Product Design Agency",
+    "description": "Product design agency crafting App, Website, and SaaS Dashboard experiences. 5+ years of experience."
+  },
+  "hero": {
+    "badgeNumber": "5+",
+    "badgeText": "5+ Years of Product Design Experience",
+    "heading": "Design that <em>Inspires</em>.<br>Products that Perform.",
+    "subtitle": "Independent product design studio helping founders and teams ship App, Website, and SaaS Dashboard experiences that look sharp and work harder.",
+    "primaryCta": "Book a Call",
+    "secondaryCta": "View Work"
+  },
+  "logos": [
+    "Nordica",
+    "Finlyte",
+    "Pulse Inc.",
+    "Orbit Labs",
+    "Heliom",
+    "Vantra"
+  ],
+  "stats": [
+    {
+      "value": "5+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "40+",
+      "label": "Projects Shipped"
+    },
+    {
+      "value": "25+",
+      "label": "Happy Clients"
+    },
+    {
+      "value": "98%",
+      "label": "Client Satisfaction"
+    }
+  ],
+  "about": {
+    "photo": "https://i.pravatar.cc/600?img=68",
+    "roleName": "Product Designer",
+    "roleTitle": "Founder, CraftoriX",
+    "heading": "I'm a Product Designer with <em>5+ years</em> of experience turning ideas into intuitive digital products.",
+    "paragraphs": [
+      "I run an independent design studio specializing in App Design, Website Design, and SaaS Dashboard Design — partnering with founders and product teams to design experiences that are both beautiful and easy to use.",
+      "From early-stage wireframes to polished, developer-ready UI, I handle the full product design process: research, UX flows, visual design, and design systems that scale."
+    ],
+    "skills": [
+      "UI/UX Design",
+      "App Design",
+      "Website Design",
+      "SaaS Dashboards",
+      "Design Systems",
+      "Prototyping"
+    ]
+  },
+  "services": [
+    {
+      "icon": "📱",
+      "title": "App Design",
+      "desc": "Native and cross-platform mobile app UI/UX — from onboarding flows to polished, ready-to-build interfaces.",
+      "tags": [
+        "iOS",
+        "Android",
+        "Prototyping"
+      ]
+    },
+    {
+      "icon": "🖥️",
+      "title": "Website Design",
+      "desc": "Marketing sites, landing pages, and web apps designed to convert visitors and represent your brand well.",
+      "tags": [
+        "Landing Pages",
+        "Web App UI",
+        "Responsive"
+      ]
+    },
+    {
+      "icon": "📊",
+      "title": "SaaS Dashboard Design",
+      "desc": "Data-dense dashboards and admin panels made simple — clear hierarchy, usable charts, and scalable UI systems.",
+      "tags": [
+        "Analytics",
+        "Admin Panels",
+        "Design Systems"
+      ]
+    }
+  ],
+  "caseStudies": [
+    {
+      "image": "https://cdn.dribbble.com/userupload/16734510/file/original-f1e2b34a8a8030e12f2a83625ecac051.png?resize=2400x1800&vertical=center",
+      "title": "Finlyte — Banking App",
+      "category": "App Design",
+      "desc": "Placeholder case study — redesigning a mobile banking experience for clarity, speed, and trust."
+    },
+    {
+      "image": "https://cdn.dribbble.com/userupload/12017863/file/original-81427c44c3bb53199e8c3db7196ffd9a.png?resize=3200x2400&vertical=center",
+      "title": "Nordica — Studio Website",
+      "category": "Website Design",
+      "desc": "Placeholder case study — a marketing site rebuilt to convert visitors into booked calls."
+    },
+    {
+      "image": "https://picsum.photos/seed/pulse-dashboard/900/620",
+      "title": "Pulse — Analytics Dashboard",
+      "category": "SaaS Dashboard",
+      "desc": "Placeholder case study — simplifying a data-dense admin panel into a usable analytics view."
+    },
+    {
+      "image": "https://picsum.photos/seed/orbit-onboarding/900/620",
+      "title": "Orbit — SaaS Onboarding App",
+      "category": "App Design",
+      "desc": "Placeholder case study — cutting onboarding drop-off with a clearer first-run flow."
+    }
+  ],
+  "moreProjects": [
+    {
+      "image": "https://picsum.photos/seed/heliom-wallet-app/900/620",
+      "title": "Heliom — Wallet App",
+      "category": "App Design",
+      "desc": "Placeholder project — a crypto wallet app redesigned for first-time users."
+    },
+    {
+      "image": "https://picsum.photos/seed/vantra-analytics-suite/900/620",
+      "title": "Vantra — Analytics Suite",
+      "category": "SaaS Dashboard",
+      "desc": "Placeholder project — a multi-tenant reporting dashboard built for scale."
+    },
+    {
+      "image": "https://picsum.photos/seed/lumen-marketing-site/900/620",
+      "title": "Lumen — Marketing Website",
+      "category": "Website Design",
+      "desc": "Placeholder project — a conversion-focused landing page for a product launch."
+    },
+    {
+      "image": "https://picsum.photos/seed/atlas-onboarding-flow/900/620",
+      "title": "Atlas — Onboarding Flow",
+      "category": "App Design",
+      "desc": "Placeholder project — a step-by-step onboarding flow that cut drop-off in half."
+    }
+  ],
+  "workNote": "Placeholder case studies — swap in real project shots and links anytime.",
+  "ctaStrip": {
+    "heading": "Apply for a free consult. <em>Build your product right.</em>",
+    "buttonText": "Let's Connect →"
+  },
+  "process": [
+    {
+      "num": "01",
+      "title": "Discover",
+      "desc": "Understand your users, business goals, and constraints before a single pixel is placed."
+    },
+    {
+      "num": "02",
+      "title": "Design",
+      "desc": "Wireframes to high-fidelity UI — iterating quickly with your feedback built into every round."
+    },
+    {
+      "num": "03",
+      "title": "Prototype",
+      "desc": "Interactive prototypes to test flows and validate decisions before development starts."
+    },
+    {
+      "num": "04",
+      "title": "Deliver",
+      "desc": "Developer-ready files, design systems, and handoff support so build stays true to design."
+    }
+  ],
+  "trust": {
+    "photo": "https://picsum.photos/seed/studio-team-collab/700/560",
+    "heading": "Clients trust the process, <em>and the results.</em>",
+    "highlights": [
+      {
+        "title": "High Standard",
+        "desc": "Every screen goes through research, iteration, and review before it ships."
+      },
+      {
+        "title": "Focused on People",
+        "desc": "Clear communication and fast feedback loops from kickoff to handoff."
+      }
+    ],
+    "stats": [
+      {
+        "value": "40+",
+        "label": "Projects Shipped"
+      },
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "25+",
+        "label": "Happy Clients"
+      },
+      {
+        "value": "98%",
+        "label": "Satisfaction Rate"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "avatar": "https://i.pravatar.cc/80?img=12",
+      "quote": "Redesigned our app in weeks, not months. The UX flows finally make sense to our users — support tickets dropped noticeably.",
+      "name": "Rahul Kapoor",
+      "role": "Founder, Finlyte"
+    },
+    {
+      "avatar": "https://i.pravatar.cc/80?img=45",
+      "quote": "Our dashboard went from cluttered to genuinely usable. Clean hierarchy, great component system, fast delivery.",
+      "name": "Sara Mehta",
+      "role": "Product Lead, Pulse"
+    },
+    {
+      "avatar": "https://i.pravatar.cc/80?img=33",
+      "quote": "New website converted noticeably better within the first month. Communication throughout was clear and quick.",
+      "name": "Aditya Verma",
+      "role": "CEO, Nordica"
+    }
+  ],
+  "blog": [
+    {
+      "image": "https://picsum.photos/seed/blog-wireframes/700/480",
+      "meta": "Design · Jul 2026",
+      "title": "Why wireframes still matter in an AI-assisted workflow.",
+      "desc": "A quick look at where fast, rough sketches still beat jumping straight to high-fidelity."
+    },
+    {
+      "image": "https://picsum.photos/seed/blog-dashboards/700/480",
+      "meta": "SaaS · Jun 2026",
+      "title": "Designing dashboards people actually want to open.",
+      "desc": "Hierarchy, density, and the small decisions that make analytics feel calm."
+    },
+    {
+      "image": "https://picsum.photos/seed/blog-onboarding/700/480",
+      "meta": "Product · May 2026",
+      "title": "Cutting onboarding drop-off without adding more steps.",
+      "desc": "Notes from a recent App Design project on first-run experience."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How does the design process work?",
+      "answer": "We start with a discovery call, move into wireframes and UI design, then hand off developer-ready files with a full design system."
+    },
+    {
+      "question": "What's your typical project timeline?",
+      "answer": "Most App, Website, or SaaS Dashboard projects run 2–6 weeks depending on scope, with weekly check-ins throughout."
+    },
+    {
+      "question": "How many revisions are included?",
+      "answer": "Every project includes rounds of feedback and revisions at each stage, so nothing moves forward until you're happy with it."
+    },
+    {
+      "question": "Do you also work with development teams?",
+      "answer": "Yes — deliverables include developer-ready specs, assets, and design systems built to hand off cleanly to any engineering team."
+    },
+    {
+      "question": "How do we get started?",
+      "answer": "Book a free intro call from the button above, or send an email — we'll scope the project together from there."
+    }
+  ],
+  "contact": {
+    "heading": "Have a project in mind? <em>Let's design it.</em>",
+    "subtitle": "Currently taking on new App, Website, and SaaS Dashboard design projects. Book a free intro call or drop an email.",
+    "email": "lpfintechindia@gmail.com",
+    "primaryCta": "Book a Call",
+    "secondaryCta": "Send an Email"
+  },
+  "footer": {
+    "email": "akshanshkumawat4112@gmail.com",
+    "copyright": "© 2026 CraftoriX. All rights reserved.",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "short": "in",
+        "url": "#"
+      },
+      {
+        "label": "Instagram",
+        "short": "ig",
+        "url": "#"
+      },
+      {
+        "label": "Behance",
+        "short": "be",
+        "url": "#"
+      },
+      {
+        "label": "Twitter",
+        "short": "x",
+        "url": "#"
+      }
+    ]
+  }
+}
