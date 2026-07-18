@@ -285,5 +285,8 @@
         "url": "#"
       }
     ]
+  },
+  "visibility": {
+    "blog": true
   }
 }

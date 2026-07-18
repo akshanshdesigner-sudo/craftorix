@@ -485,6 +485,14 @@
     border:1px solid rgba(212,255,107,0.3);background:rgba(43,58,26,0.3);
     padding:6px 14px;border-radius:100px;text-transform:uppercase;letter-spacing:.05em;
   }
+  .case-caption .case-link{
+    display:inline-block;margin-left:10px;
+    font-family:var(--font-mono);font-size:11px;color:var(--charcoal);
+    background:var(--lime);border:1px solid var(--lime);
+    padding:6px 14px;border-radius:100px;text-transform:uppercase;letter-spacing:.05em;
+    transition:filter .2s ease;
+  }
+  .case-caption .case-link:hover{filter:brightness(1.08);}
   .case-dots{display:flex;justify-content:center;gap:8px;margin-top:24px;}
   .case-dots button{
     width:8px;height:8px;border-radius:50%;border:none;
@@ -700,6 +708,7 @@
             <h4 id="caseTitle"></h4>
             <p id="caseDesc"></p>
             <span class="cat-chip" id="caseTag"></span>
+            <a class="case-link" id="caseLink" href="#" target="_blank" rel="noopener" style="display:none;">View Case Study ↗</a>
           </div>
           <div class="case-dots" id="caseDots"></div>
           <div class="case-nav">

@@ -115,7 +115,13 @@
     const workGrid = document.getElementById('workGrid');
     workGrid.innerHTML = '';
     (content.moreProjects || []).forEach((p, i) => {
-      const card = el('div', { className: 'work-card reveal' });
+      // Cards with a redirect URL become links (PDF, Figma, external case study, ...)
+      const card = el(p.url ? 'a' : 'div', { className: 'work-card reveal' });
+      if (p.url) {
+        card.setAttribute('href', p.url);
+        card.setAttribute('target', '_blank');
+        card.setAttribute('rel', 'noopener');
+      }
       const thumb = el('div', { className: 'work-thumb ph-' + ((i % 4) + 1) });
       thumb.appendChild(el('img', { attrs: { src: p.image, alt: p.title + ' (placeholder)', loading: 'lazy' } }));
       thumb.appendChild(el('span', { className: 'cat-chip', text: p.category }));
@@ -252,7 +258,48 @@
       }));
     });
 
+    applyVisibility(content.visibility || {});
     observeReveals();
+  }
+
+  // Hide/show whole page sections based on CMS visibility flags (missing key = visible)
+  function applyVisibility(vis) {
+    const shown = key => vis[key] !== false;
+    const setSection = (selector, visible) => {
+      document.querySelectorAll(selector).forEach(node => {
+        node.style.display = visible ? '' : 'none';
+      });
+    };
+    setSection('.hero', shown('hero'));
+    setSection('.logos-strip', shown('logos'));
+    setSection('.stats', shown('stats'));
+    setSection('#about', shown('about'));
+    setSection('#services', shown('services'));
+    setSection('.case-carousel', shown('caseStudies'));
+    setSection('.more-work-head', shown('moreProjects'));
+    setSection('.work-grid', shown('moreProjects'));
+    setSection('.work-note', shown('moreProjects'));
+    setSection('#work', shown('caseStudies') || shown('moreProjects'));
+    setSection('.cta-strip', shown('ctaStrip'));
+    setSection('#process', shown('process'));
+    setSection('#trust', shown('trust'));
+    setSection('#testimonials', shown('testimonials'));
+    setSection('#blog', shown('blog'));
+    setSection('#faq', shown('faq'));
+    setSection('#contact', shown('contact'));
+
+    // Hide nav/footer links that point to hidden sections
+    const navTargets = {
+      '#work': shown('caseStudies') || shown('moreProjects'),
+      '#services': shown('services'),
+      '#about': shown('about'),
+      '#faq': shown('faq'),
+      '#contact': shown('contact')
+    };
+    document.querySelectorAll('nav.links a, .mobile-menu a, .footer-nav a, .nav-cta a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href in navTargets) a.style.display = navTargets[href] ? '' : 'none';
+    });
   }
 
   function setText(id, value) {
@@ -294,6 +341,18 @@
       setText('caseTitle', p.title);
       setText('caseDesc', p.desc);
       setText('caseTag', p.category);
+      // Redirect URL: image becomes clickable and a "View Case Study" link appears
+      const caseLink = document.getElementById('caseLink');
+      caseImg.style.cursor = p.url ? 'pointer' : '';
+      caseImg.onclick = p.url ? () => window.open(p.url, '_blank', 'noopener') : null;
+      if (caseLink) {
+        if (p.url) {
+          caseLink.href = p.url;
+          caseLink.style.display = 'inline-block';
+        } else {
+          caseLink.style.display = 'none';
+        }
+      }
       renderDots();
     }
     document.getElementById('casePrev').onclick = () => {

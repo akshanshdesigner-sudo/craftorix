@@ -144,6 +144,21 @@
   .muted{color:var(--sage);font-size:12px;margin-top:4px;}
   #loading{padding:60px 32px;text-align:center;color:var(--sage);}
 
+  /* ---------- SECTION VISIBILITY TOGGLE ---------- */
+  .vis-toggle{
+    display:flex;align-items:center;gap:12px;
+    margin:0 0 20px;padding:13px 16px;
+    border:1px solid var(--border);border-radius:10px;
+    background:var(--panel-2);cursor:pointer;
+    font-size:13.5px;color:var(--white);font-family:'Inter',sans-serif;
+  }
+  .vis-toggle input{
+    accent-color:var(--lime);width:16px;height:16px;cursor:pointer;flex-shrink:0;
+  }
+  .vis-toggle .state{margin-left:auto;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;}
+  .vis-toggle .state.on{color:var(--lime);}
+  .vis-toggle .state.off{color:var(--danger);}
+
   /* ---------- LOGIN SCREEN ---------- */
   .login-screen{
     min-height:100vh;display:flex;align-items:center;justify-content:center;

@@ -156,8 +156,34 @@
     parent.appendChild(p);
   }
 
+  // Show/Hide toggle for a whole page section; missing key defaults to visible
+  function visibilityToggle(parent, key) {
+    const label = document.createElement('label');
+    label.className = 'vis-toggle';
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.checked = state.visibility[key] !== false;
+    const text = document.createElement('span');
+    text.textContent = 'Show this section on the website';
+    const stateTag = document.createElement('span');
+    function renderState() {
+      stateTag.className = 'state ' + (input.checked ? 'on' : 'off');
+      stateTag.textContent = input.checked ? 'Visible' : 'Hidden';
+    }
+    input.addEventListener('change', () => {
+      state.visibility[key] = input.checked;
+      renderState();
+    });
+    renderState();
+    label.appendChild(input);
+    label.appendChild(text);
+    label.appendChild(stateTag);
+    parent.appendChild(label);
+  }
+
   // ---------- module builders: each receives its own panel container ----------
   function buildHero(c) {
+    visibilityToggle(c, 'hero');
     field(c, 'Badge number (e.g. 5+)', state.hero.badgeNumber, v => state.hero.badgeNumber = v);
     field(c, 'Badge text (HTML allowed, e.g. <strong>bold</strong>)', state.hero.badgeText, v => state.hero.badgeText = v, { textarea: true });
     field(c, 'Heading (wrap a word in <em></em> to highlight it green, <br> for line break)', state.hero.heading, v => state.hero.heading = v, { textarea: true });
@@ -168,10 +194,12 @@
   }
 
   function buildLogos(c) {
+    visibilityToggle(c, 'logos');
     chipList(c, 'Logos', state.logos, 'Company name');
   }
 
   function buildStats(c) {
+    visibilityToggle(c, 'stats');
     renderRepeatable(c, state.stats, (card, item) => {
       const r = row(card);
       field(col(r), 'Value (e.g. 40+, 98%)', item.value, v => item.value = v);
@@ -180,6 +208,7 @@
   }
 
   function buildAbout(c) {
+    visibilityToggle(c, 'about');
     field(c, 'Photo URL', state.about.photo, v => state.about.photo = v);
     const r = row(c);
     field(col(r), 'Role name', state.about.roleName, v => state.about.roleName = v);
@@ -191,6 +220,7 @@
   }
 
   function buildServices(c) {
+    visibilityToggle(c, 'services');
     renderRepeatable(c, state.services, (card, item) => {
       const r = row(card);
       field(col(r), 'Icon (emoji)', item.icon, v => item.icon = v);
@@ -202,6 +232,7 @@
   }
 
   function buildCaseStudies(c) {
+    visibilityToggle(c, 'caseStudies');
     hint(c, 'The featured project carousel at the top of the Work section.');
     renderRepeatable(c, state.caseStudies, (card, item) => {
       field(card, 'Image URL', item.image, v => item.image = v);
@@ -209,10 +240,12 @@
       field(col(r), 'Title', item.title, v => item.title = v);
       field(col(r), 'Category', item.category, v => item.category = v);
       field(card, 'Description', item.desc, v => item.desc = v, { textarea: true });
-    }, () => ({ image: '', title: 'New Case Study', category: 'App Design', desc: '' }), 'Add case study');
+      field(card, 'Redirect URL (PDF / Figma / case study link — optional)', item.url, v => item.url = v, { type: 'url', hint: 'When set, the carousel image becomes clickable and a "View Case Study" button appears.' });
+    }, () => ({ image: '', title: 'New Case Study', category: 'App Design', desc: '', url: '' }), 'Add case study');
   }
 
   function buildMoreProjects(c) {
+    visibilityToggle(c, 'moreProjects');
     hint(c, 'A different set of projects shown in the grid below the carousel.');
     renderRepeatable(c, state.moreProjects, (card, item) => {
       field(card, 'Image URL', item.image, v => item.image = v);
@@ -220,16 +253,19 @@
       field(col(r), 'Title', item.title, v => item.title = v);
       field(col(r), 'Category', item.category, v => item.category = v);
       field(card, 'Description', item.desc, v => item.desc = v, { textarea: true });
-    }, () => ({ image: '', title: 'New Project', category: 'App Design', desc: '' }), 'Add project');
+      field(card, 'Redirect URL (PDF / Figma / case study link — optional)', item.url, v => item.url = v, { type: 'url', hint: 'When set, the whole project card opens this link in a new tab.' });
+    }, () => ({ image: '', title: 'New Project', category: 'App Design', desc: '', url: '' }), 'Add project');
     field(c, 'Note below the project grid', state.workNote, v => state.workNote = v);
   }
 
   function buildCtaStrip(c) {
+    visibilityToggle(c, 'ctaStrip');
     field(c, 'Heading (HTML allowed)', state.ctaStrip.heading, v => state.ctaStrip.heading = v, { textarea: true });
     field(c, 'Button text', state.ctaStrip.buttonText, v => state.ctaStrip.buttonText = v);
   }
 
   function buildProcess(c) {
+    visibilityToggle(c, 'process');
     renderRepeatable(c, state.process, (card, item) => {
       const r = row(card);
       field(col(r), 'Number (e.g. 01)', item.num, v => item.num = v);
@@ -239,6 +275,7 @@
   }
 
   function buildTrust(c) {
+    visibilityToggle(c, 'trust');
     hint(c, 'Photo + highlights + stats block.');
     field(c, 'Photo URL', state.trust.photo, v => state.trust.photo = v);
     field(c, 'Heading (HTML allowed)', state.trust.heading, v => state.trust.heading = v, { textarea: true });
@@ -256,6 +293,7 @@
   }
 
   function buildTestimonials(c) {
+    visibilityToggle(c, 'testimonials');
     renderRepeatable(c, state.testimonials, (card, item) => {
       field(card, 'Avatar image URL', item.avatar, v => item.avatar = v);
       field(card, 'Quote', item.quote, v => item.quote = v, { textarea: true });
@@ -266,6 +304,7 @@
   }
 
   function buildBlog(c) {
+    visibilityToggle(c, 'blog');
     renderRepeatable(c, state.blog, (card, item) => {
       field(card, 'Image URL', item.image, v => item.image = v);
       field(card, 'Meta (e.g. Design · Jul 2026)', item.meta, v => item.meta = v);
@@ -275,6 +314,7 @@
   }
 
   function buildFaq(c) {
+    visibilityToggle(c, 'faq');
     renderRepeatable(c, state.faq, (card, item) => {
       field(card, 'Question', item.question, v => item.question = v);
       field(card, 'Answer', item.answer, v => item.answer = v, { textarea: true });
@@ -282,6 +322,7 @@
   }
 
   function buildContact(c) {
+    visibilityToggle(c, 'contact');
     field(c, 'Heading (HTML allowed)', state.contact.heading, v => state.contact.heading = v, { textarea: true });
     field(c, 'Subtitle', state.contact.subtitle, v => state.contact.subtitle = v, { textarea: true });
     field(c, 'Email address', state.contact.email, v => state.contact.email = v, { type: 'email' });
@@ -364,6 +405,7 @@
   async function load() {
     const res = await fetch('/api/content', { cache: 'no-store' });
     state = await res.json();
+    if (!state.visibility) state.visibility = {};
     loading.style.display = 'none';
     panelsRoot.style.display = 'block';
     buildPanels();
